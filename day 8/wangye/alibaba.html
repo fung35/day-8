@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url(./image/timg.jpg);
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+        #box1 {
+            width: 1160px;
+            height: 55px;
+            margin: 0 auto;
+            color: white;
+            display: flex;
+        }
+        #box1>.title>a{
+            margin: 0 40px 0 0;
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+            text-decoration: none;
+            line-height: 55px;
+        }
+        #box1>#tubiao>.ku>a{
+            line-height: 55px;
+            font-size: 14px;
+            text-decoration: none;
+            color: gray;
+        }
+        #tubiao {
+            width: 115px;
+        }
+        #tubiao>.ku{
+            margin-right: 40px;
+            display: table;
+        }
+        #tubiao2 {
+            display: none;
+        }
+        #tubiao2>li{
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        #tubiao2>li>a {
+            color: gray;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        #box1>#tubiao>.ku :hover{
+            color: white;
+        }
+       .ku:hover #tubiao2 {
+            display: table;
+        }
+       #box1>#shouye {
+           width: 110px;
+       }
+
+       #box1>#shouye>li{
+           line-height: 55px;
+           list-style: none;
+       }
+        #box1>#shouye>li>a {
+            color: gray;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        #box1>#shouye>li>a:hover {
+            color: white;
+        }
+        #box1>#chatu {
+            width: 115px;
+        }
+        #box1>#chatu>li{
+            line-height: 55px;
+            list-style: none;
+        }
+        #box1>#chatu>li>a {
+            font-size: 14px;
+            color: gray;
+            text-decoration: none;
+        }
+        #box1>#chatu>li :hover {
+            color: white;
+        }
+        #box1>#resourse {
+            width: 115px;
+        }
+        #box1>#resourse>.guanli>a{
+            line-height: 55px;
+            font-size: 14px;
+            text-decoration: none;
+            color: gray;
+        }
+        .guanli{
+            display: table;
+        }
+        #mine {
+            display: none;
+        }
+        #mine>li{
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        #mine>li>a {
+            color: gray;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        #box1>#resourse>.guanli :hover{
+            color: white;
+        }
+        .guanli:hover #mine {
+            display: table;
+        }
+        #box1>#help>.bangzhu>a{
+              line-height: 55px;
+              font-size: 14px;
+              text-decoration: none;
+              color: gray;
+          }
+        #help {
+            width: 115px;
+        }
+        #help>.bangzhu {
+            margin-left: 40px;
+            display: table;
+        }
+        #gongneng {
+            display: none;
+        }
+        #gongneng>li{
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        #gongneng>li>a {
+            color: gray;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        #box1>#help>.bangzhu :hover{
+            color: white;
+        }
+        .bangzhu:hover #gongneng {
+            display: table;
+        }
+        #box1>#activity {
+            width: 430px;
+            position: relative;
+        }
+        #box1>#activity>li>img {
+            position: absolute;
+            top: 18px;
+            right: 0px;
+        }
+        #box1>#activity>li{
+            margin-left: 350px;
+            line-height: 55px;
+            list-style: none;
+        }
+        #box1>#activity>li>a {
+            font-size: 14px;
+            color: gray;
+            text-decoration: none;
+        }
+        #box1>#activity>li :hover {
+            color: white;
+        }
+        .picture {
+            width: 350px;
+            height: 200px;
+            margin: 200px auto 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        .picture>img {
+            max-width: 50%;
+            max-height: 50%;
+        }
+        #box9 {
+            width: 766px;
+            height: 120px;
+            border: 1px solid transparent;
+            text-align: center;
+            position: relative;
+            margin: 0 auto;
+        }
+        #box9>.option {
+            display: flex;
+            position: absolute;
+            top: 18px;
+            left: 10px;
+        }
+        #box9>.option>.tubiao,.yonghu {
+            width: 38px;
+            height: 22px;
+            margin-right: 4px;
+            color: #ddd;
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            cursor: pointer;
+        }
+        #box9>.option>.tubiao:hover {
+            border-color: white;
+        }
+        #box9>.option>.yonghu:hover {
+            border-color: white;
+        }
+        #search {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            height: 25px;
+        }
+        .sousuo {
+            border-radius: 10px;
+            border: 1px solid white;
+            width: 766px;
+            height: 30px;
+            background-color:transparent;
+        }
+        input[type="text"]::placeholder{
+            text-align: center;
+        }
+        input[type="text"] {
+            color: white;
+        }
+        .box2 {
+            width: 1100px;
+            height: 105px;
+            margin: 20px auto 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .box2>.donghua>img {
+            max-width: 85%;
+            max-height: 85%;
+        }
+        .box2>.donghua {
+            width: 3300px;
+            height: 105px;
+            animation:tuisong 8s infinite alternate 1s;
+        }
+        @keyframes tuisong {
+            50% {
+                margin-left: -1100px;
+            }
+            100% {
+                margin-left: -2200px;
+            }
+        }
+        #box3 {
+            width: 1160px;
+            height: 370px;
+            margin: 20px auto 10px;
+            display: flex;
+            justify-content: center;
+        }
+        #box3 div{
+            width: 330px;
+            height: 338px;
+            margin: 0 30px 30px 0;
+            background-color: white;
+        }
+        #box3>.bis>div>h4{
+            text-align: center;
+                 }
+        #box3>.bis>div>h4>img {
+            max-height: 15%;
+            max-width: 15%;
+        }
+        #box3>.bis>div>.biscuit>li {
+            width: 80px;
+            height: 50px;
+            list-style: none;
+            text-align: center;
+        }
+        #box3>.bis>div>.biscuit {
+            margin: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #box3>.bis>div>.biscuit>li>img {
+            max-height: 50%;
+            max-width: 50%;
+
+        }
+        .box4 {
+            width: 1500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .box4>img {
+            width: 1500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .box5 {
+            width: 1500px;
+            height: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .box5>img {
+            width: 1500px;
+            height: 900px;
+        }
+        .box6 {
+            width: 1160px;
+            height: 237px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        .left {
+            width: 656px;
+            height: 192px;
+            margin: 45px 0 0;
+        }
+        .left>h4 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        .left>div>p {
+            font-size: 12px;
+            color: #60606D;
+            margin-bottom: 20px;
+        }
+        .right {
+            margin-top: 45px;
+            width: 380px;
+            height: 175px;
+        }
+        .right>h4 {
+            font-size: 18px;
+            color: gray;
+
+        }
+        .right>ul {
+            margin: 27px 0 0;
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .right>ul>li {
+            display: list-item;
+            margin-bottom: 5px;
+            margin-right: 15px;
+        }
+        .right>ul>li>a:hover {
+            color: white;
+        }
+        .right>ul>li>a {
+            text-decoration: none;
+            font-size: 12px;
+            color: #60606D;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+ <div class="title">
+     <a href="#">ICONFONT</a>
+ </div>
+    <ul id="shouye">
+        <li><a href="#">首页</a></li>
+    </ul>
+    <ul id="chatu">
+        <li><a href="#">查图库</a></li>
+    </ul>
+    <ul id="tubiao">
+        <li class="ku"><a href="#">图标库</a>
+        <ul id="tubiao2">
+            <li><a href="#">官方图标库</a></li>
+            <li><a href="#">多色图标库</a></li>
+            <li><a href="#">单色图标库</a></li>
+            <li><a href="#">所有图标库</a></li>
+
+        </ul></li>
+    </ul>
+    <ul id="resourse">
+        <li class="guanli"><a href="#">资源管理</a>
+            <ul id="mine">
+                <li><a href="#">我的图标</a></li>
+                <li><a href="#">我的收藏</a></li>
+                <li><a href="#">我的项目</a></li>
+                <li><a href="#">我的插图</a></li>
+                </li>
+            </ul>
+    </ul>
+    <ul id="help">
+        <li class="bangzhu"><a href="#">帮助</a>
+            <ul id="gongneng">
+                <li><a href="#">功能介绍</a></li>
+                <li><a href="#">图表绘制</a></li>
+                <li><a href="#">代码应用</a></li>
+                <li><a href="#">相关文章</a></li>
+                <li><a href="#">关于我们</a></li>
+                </li>
+            </ul>
+    </ul>
+    <ul id="activity">
+        <li><a href="#">活动</a><img src="image/hot.png"></li>
+    </ul>
+</div>
+<div class="picture">
+    <img src="image/icf.jpg">
+</div>
+<div id="box9">
+    <div class="option">
+        <div class="tubiao">图标</div>
+        <div class="yonghu">用户</div>
+    </div>
+    <div id="search">
+    <input type="text" class="sousuo" placeholder="搜索">
+</div>
+</div>
+<div class="box2">
+    <div class="donghua">
+        <img src="image/1.png" alt="">
+        <img src="image/a1.png" alt="">
+        <img src="image/a2.png" alt="">
+    </div>
+</div>
+<div id="box3">
+    <a href="#" class="bis"> <div>
+        <h4>
+            <img src="image/i1.png" alt="">
+        </h4>
+        <ul class="biscuit">
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li> <img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+            <li><img src="image/biscuit.png" alt=""></li>
+        </ul>
+    </div>
+    </a>
+    <a href="#" class="bis">
+    <div>
+        <h4>
+            <img src="image/i1.png" alt="">
+        </h4><ul class="biscuit">
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+        <li><img src="image/dinosaur.png" alt=""></li>
+
+    </ul></div>
+    </a>
+    <a href="#" class="bis">
+    <div>
+        <h4>
+            <img src="image/i1.png" alt="">
+        </h4>
+        <ul class="biscuit">
+        <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+            <li><img src="image/cloths.png" alt=""></li>
+    </ul>
+    </div>
+    </a>
+</div>
+<div class="box4">
+    <img src="image/2.png">
+</div>
+<div class="box5"><img src="image/8.png" alt=""></div>
+<div class="box6">
+    <div class="left">
+    <h4>
+    ICONFONT+
+    </h4>
+        <div><p>阿里妈妈MUX倾力打造的矢量图标管理、交流平台。<br>
+            设计师将图标上传到Iconfont平台，用户可以自定义下载多种格式的icon，平台也可将图标转换为字体，便于前端工程师自由调整与调用。</p></div>
+       <div><p>©ALIMAMA MUX, powered by alimama THX.<br>
+            转载内容版权归作者及来源网站所有，本站原创内容转载请注明来源，商业媒体及纸媒请先联系：zy99945@alibaba-inc.com<br>
+            法律声明浙ICP备09109183号-25<img src="image/11.gif" class="tupian" alt="" width="20px"><img src="image/12.png" alt=""> 浙公网安备 33010002000124号</p></div>
+    </div>
+    <div class="right">
+        <h4>
+            友情链接
+        </h4>
+        <ul>
+            <li><a href="#">THX</a></li>
+            <li><a href="#">阿里妈妈创意中心</a></li>
+            <li><a href="#">阿里妈妈 MUX</a></li>
+            <li><a href="#">阿里巴巴 UED 官网</a></li>
+            <li><a href="#">优设网</a></li>
+            <li><a href="#">优优教程网</a></li>
+            <li><a href="#">Bootstrap 中文网</a></li>
+            <li><a href="#">天猫 Tmall Design</a></li>
+            <li><a href="#">UI 中国</a></li>
+            <li><a href="#">Alibaba ICS Design</a></li>
+            <li><a href="#">Teambition</a></li>
+
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>
